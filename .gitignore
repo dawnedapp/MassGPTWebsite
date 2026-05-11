@@ -1,0 +1,19 @@
+# Environment files
+.env
+backend/.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Node / extension deps
+node_modules/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/

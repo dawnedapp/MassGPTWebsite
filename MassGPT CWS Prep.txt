@@ -1,0 +1,72 @@
+1. Immediate prep
+
+Themes: Define color palettes & font tokens and add to styles.css.
+Branding: Finalize logo usage, app icon/favicon variants, and consistent brand colors across extension UI, store assets, and feedback/legal pages.
+Brand assets: Prepare/export 128x128 icon, square logo, and listing-ready screenshots with matching visual style.
+Stripe account: Create and verify the production Stripe account, set up business details, and configure payment/subscription settings.
+Keys / Secrets: Create/capture production secrets: MONGO_URI, STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, JWT_SECRET_KEY, SECRET_KEY. Store securely (Render secrets or vault).
+Stripe test: Create a Stripe test environment and test users; verify subscription create/update/delete flows with Stripe CLI.
+2. Code & manifest readiness
+
+Manifest MV3: Verify manifest.json uses MV3 and background.service_worker (manifest.json).
+Minimize permissions: Remove unused permissions/host_permissions and document each required permission.
+No remote eval: Remove eval()/dynamic script injection; bundle all scripts locally. Check ui.js, engine.js, content.js, background.js.
+Service worker resilience: Make background.js resilient to start/stop; avoid relying on in-memory state.
+3. Backend & Stripe robustness
+
+Deploy & envs: Deploy to Cloudflare Workers and set environment variables listed above (MONGO_URI, STRIPE keys, etc.). Confirm /feedback and /terms load (feedback.html, terms.html).
+MongoDB Atlas: Ensure MongoDB Atlas connection is configured and credentials stored securely in Cloudflare Workers secrets/environment. Test connectivity before full deployment.
+Webhook coverage: Implement and test Stripe handlers: customer.subscription.created, customer.subscription.updated, customer.subscription.deleted in app.py. Record cancel_scheduled_at and update is_pro on final cancel.
+Cancel scheduling: Ensure POST /api/uninstall/cancel-subscription sets cancel_at_period_end=True and records metadata in user document.
+Retry & logging: Add retries and logs for Stripe API failures; surface friendly messages.
+4. User experience & legal
+
+Terms click-through: Enforce terms. (ui.js, app.py) ✅
+Email verification: Users receive 6-digit code on registration; must verify before login. ✅
+Integrate SendGrid for production email delivery: Add SENDGRID_API_KEY to env; update send_verification_code() to use SendGrid API.
+Uninstall flow: Verify chrome.runtime.setUninstallURL in background.js and that feedback page opt-in cancel works. ✅
+Privacy Policy: Publish a privacy page and link it in store listing and app: explain data types, retention, deletion steps, third parties (Stripe, Mongo).
+Terms & subscription disclosure: Ensure Terms explicitly state uninstall ≠ cancel and explain cancel options.
+5. Theming & localization
+
+Color schemes: Implement Light, Dark, Retro Green, Cosmic, Luduvo in CSS variables and theme switcher (store tokens in styles.css).
+Fonts: Add font-loading options for Google Sans Flex, Instrument Sans, DM Sans, Stack Sans, Titillium Web (respect licensing).
+Languages: Add localization scaffolding (messages JSON per locale, e.g., locales/en.json) and test UI strings for LTR/RTL if needed.
+6. Admin & observability
+
+Feedback viewer / notifications: Build a simple admin page or add email/Slack webhook for new feedback/cancel requests (store records in Mongo DB).
+Monitoring: Add error logging and alerts for Stripe/webhook failures and backend errors. Set up Cloudflare Workers monitoring, error tracking, and alerting for failed requests.
+7. Security & compliance
+
+CSP & HTTPS: Ensure all calls use HTTPS; check Content Security Policy; do not load remote scripts/styles at runtime.
+Secrets handling: Verify no secrets committed. Update .env.example with guidance only.
+Data deletion: Implement a user-data deletion endpoint or documented request flow.
+8. Packaging & QA
+
+E2E testing: Test full flows locally: register (terms), login, bulk actions, rate limits, settings, uninstall → feedback, cancel request. Use Chrome unpacked extension and a test Stripe subscription.
+Cross-browser sanity: Verify on latest stable Chrome, maybe Chrome on macOS/Windows.
+Accessibility & polish: Validate dialog focus, keyboard close, and responsive visuals for settings and feedback pages.
+9. Chrome Web Store (CWS) submission
+
+Assets: Prepare icons (128×128), screenshots (3–5), and optional promo video.
+Listing copy: Write short & long descriptions, category, support URL, and contact email.
+Privacy & Terms links: Add live Privacy Policy and Terms URLs to listing.
+Reviewer notes: Create REVIEWER_NOTES.md with: steps to reproduce, test credentials or demo mode, permission justifications (one-line each), and CWS permissions rationale.
+Data use form: Complete the CWS data collection questionnaire accurately (types, purposes, retention, third parties).
+Zip package: Create clean ZIP of extension root (exclude dev files).
+10. Upload, review & publish
+
+Upload: Submit ZIP and fill listing fields on the Developer Dashboard.
+Respond: Respond quickly to reviewer questions; provide test credentials/screenshots if asked.
+Publish & verify: After publish, test install/uninstall flow on live extension, and verify feedback/cancel reach backend.
+11. Post-publish ops
+
+Analytics & support: Monitor usage, errors, feedback submissions; set up support triage.
+Maintenance: Keep Terms and Privacy in sync with behavior; bump versions for updates; roll out patches as needed.
+If you want, I can now:
+
+generate CWS_PERMISSIONS.md and REVIEWER_NOTES.md from your current code, or
+implement the Stripe customer.subscription.updated webhook and cancel_scheduled_at DB field, or
+start implementing the Light/Dark CSS themes and a theme switcher, or
+prepare Cloudflare Workers deployment guide and wrangler.toml, or
+integrate SendGrid/SES for production email verification sending.

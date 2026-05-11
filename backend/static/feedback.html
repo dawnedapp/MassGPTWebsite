@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GPT Mass Deleter Feedback</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #0f1115;
+            --panel: #181b22;
+            --panel-2: #1f2430;
+            --text: #f1f1f4;
+            --muted: #a8afbd;
+            --border: #2d3442;
+            --accent: #15b37a;
+            --accent-2: #0f8f62;
+            --danger: #e65d5d;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(21, 179, 122, 0.16), transparent 30%),
+                radial-gradient(circle at bottom right, rgba(75, 107, 179, 0.15), transparent 28%),
+                linear-gradient(180deg, #0b0d11, #11151b 55%, #0f1115);
+            color: var(--text);
+            display: grid;
+            place-items: center;
+            padding: 24px;
+        }
+
+        .shell {
+            width: min(100%, 820px);
+            display: grid;
+            gap: 18px;
+            grid-template-columns: 1.1fr 0.9fr;
+        }
+
+        .hero,
+        .card {
+            background: rgba(24, 27, 34, 0.92);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero {
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 540px;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--accent);
+            font-weight: 800;
+            font-size: 12px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: clamp(32px, 5vw, 56px);
+            line-height: 0.98;
+            margin: 0;
+            letter-spacing: -0.04em;
+        }
+
+        .subtitle {
+            margin: 16px 0 0;
+            color: var(--muted);
+            font-size: 16px;
+
+            <label style="display:flex; align-items:flex-start; gap:10px; font-size:13px; color:#dfe5ef; font-weight:600; line-height:1.5;"><input name="cancel_subscription" type="checkbox" style="width:auto; margin-top:3px;">Cancel my paid subscription at the end of the current billing period if I have one </label>line-height: 1.7;
+            max-width: 42ch;
+        }
+
+        .bullets {
+            display: grid;
+            gap: 10px;
+            margin-top: 28px;
+        }
+
+        .bullet {
+            padding: 12px 14px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            color: #dfe5ef;
+            font-size: 14px;
+        }
+
+        .card {
+            padding: 24px;
+        }
+
+        .card h2 {
+            margin: 0 0 8px;
+            font-size: 20px;
+        }
+
+        .card p {
+            margin: 0 0 18px;
+            color: var(--muted);
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        form {
+            display: grid;
+            gap: 14px;
+        }
+
+        label {
+            display: grid;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #dfe5ef;
+        }
+
+        input,
+        select,
+        textarea {
+            payload.cancel_subscription=formData.get('cancel_subscription')==='on';
+            width: 100%;
+            background: var(--panel-2);
+
+            if (payload.cancel_subscription && payload.email) {
+                try {
+                    const cancelResponse=await fetch('/api/uninstall/cancel-subscription', {
+
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+
+                        ,
+                        body: JSON.stringify({
+                            email: payload.email
+                        })
+                });
+
+            if ( !cancelResponse.ok) {
+                const cancelData=await cancelResponse.json().catch(()=> ({}));
+            throw new Error(cancelData.error || 'Failed to schedule subscription cancellation');
+        }
+        }
+
+        catch (cancelError) {
+            setStatus(cancelError.message || 'Unable to cancel subscription.', 'error');
+            return;
+        }
+        }
+
+        color: var(--text);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 12px 14px;
+        font: inherit;
+        outline: none;
+        }
+
+        textarea {
+            min-height: 128px;
+            resize: vertical;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: rgba(21, 179, 122, 0.8);
+            box-shadow: 0 0 0 3px rgba(21, 179, 122, 0.16);
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-top: 4px;
+        }
+
+        button {
+            border: none;
+            border-radius: 12px;
+            padding: 12px 16px;
+            font: inherit;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .primary {
+            background: linear-gradient(180deg, var(--accent), var(--accent-2));
+            color: white;
+            box-shadow: 0 12px 30px rgba(21, 179, 122, 0.25);
+        }
+
+        .secondary {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .status {
+            min-height: 20px;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .status.error {
+            color: var(--danger);
+        }
+
+        .status.success {
+            color: #44d49a;
+        }
+
+        .thank-you {
+            display: none;
+            padding: 16px;
+            border-radius: 14px;
+            background: rgba(21, 179, 122, 0.08);
+            border: 1px solid rgba(21, 179, 122, 0.22);
+            color: #dff8ed;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 840px) {
+            .shell {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="shell">
+        <section class="hero">
+            <div>
+                <div class="eyebrow">GPT Mass Deleter</div>
+                <h1>Tell us what would have made the extension better.</h1>
+                <p class="subtitle">If you removed the extension, this page gives you a fast way to leave feedback,
+                    report a problem, or suggest a feature without needing to reinstall anything.</p>
+            </div>
+            <div class="bullets">
+                <div class="bullet">Fast feedback for bugs, missing features, or setup issues</div>
+                <div class="bullet">Optional email so we can follow up if you want a reply</div>
+                <div class="bullet">Anonymous feedback is supported too</div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Feedback form</h2>
+            <p>Share anything that would help us improve the extension.</p>
+
+            <div id="thank-you" class="thank-you">Thanks for the feedback. It has been submitted successfully.</div>
+
+            <form id="feedback-form">
+                <div class="row">
+                    <label>
+                        Email (optional)
+                        <input name="email" type="email" placeholder="you@example.com">
+                    </label>
+                    <label>
+                        Rating
+                        <select name="rating">
+                            <option value="">Select one</option>
+                            <option value="5">5 - Excellent</option>
+                            <option value="4">4 - Good</option>
+                            <option value="3">3 - Okay</option>
+                            <option value="2">2 - Needs work</option>
+                            <option value="1">1 - Bad</option>
+                        </select>
+                    </label>
+                </div>
+
+                <label>
+                    Main reason for uninstalling
+                    <select name="reason">
+                        <option value="">Choose a reason</option>
+                        <option value="bugs">Bugs or crashes</option>
+                        <option value="missing-features">Missing features</option>
+                        <option value="performance">Performance or speed</option>
+                        <option value="did-not-need">Did not need it anymore</option>
+                        <option value="confusing-ui">UI or workflow felt confusing</option>
+                        <option value="other">Other</option>
+                    </select>
+                </label>
+
+                <label>
+                    Additional comments
+                    <textarea name="comments" placeholder="What happened? What should we fix?"></textarea>
+                </label>
+
+                <div class="actions">
+                    <button class="primary" type="submit">Submit feedback</button>
+                    <button class="secondary" type="button" id="copy-url-btn">Copy page link</button>
+                </div>
+
+                <div id="status" class="status"></div>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        const form = document.getElementById('feedback-form');
+        const statusEl = document.getElementById('status');
+        const thankYou = document.getElementById('thank-you');
+        const copyUrlBtn = document.getElementById('copy-url-btn');
+
+        const pageUrl = window.location.href;
+
+        function setStatus(message, kind) {
+            statusEl.textContent = message;
+            statusEl.className = 'status' + (kind ? ' ' + kind : '');
+        }
+
+        copyUrlBtn.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(pageUrl);
+                setStatus('Page link copied to clipboard.', 'success');
+            } catch (error) {
+                setStatus('Unable to copy the page link.', 'error');
+            }
+        });
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            setStatus('Submitting...', '');
+
+            const formData = new FormData(form);
+            const payload = Object.fromEntries(formData.entries());
+            payload.source = new URLSearchParams(window.location.search).get('source') || 'feedback_page';
+            payload.page_url = pageUrl;
+
+            try {
+                const response = await fetch('/api/feedback', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json().catch(() => ({}));
+                if (!response.ok) {
+                    throw new Error(data.error || 'Failed to submit feedback');
+                }
+
+                form.style.display = 'none';
+                thankYou.style.display = 'block';
+                setStatus('', '');
+            } catch (error) {
+                setStatus(error.message || 'Unable to submit feedback.', 'error');
+            }
+        });
+    </script>
+</body>
+
+</html>
