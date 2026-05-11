@@ -144,7 +144,7 @@ body.theme-cosmic {
     gap: 8px;
     align-items: center;
     font-size: 12px;
-    color: #ececf1;
+    color: var(--text-primary);
 }
 
 /* Buttons row forced onto its own line */
@@ -168,7 +168,7 @@ body.theme-cosmic {
 
 .bulk-gear {
     background: transparent;
-    color: #ececf1;
+    color: var(--text-primary);
     border: 1px solid transparent;
     border-radius: 6px;
     padding: 4px 8px;
@@ -177,16 +177,16 @@ body.theme-cosmic {
 }
 
 .bulk-gear:hover {
-    background: #2a2b32;
-    border-color: #565869;
+    background: var(--bg-tertiary);
+    border-color: var(--border-color);
 }
 
 .bulk-settings-panel {
     position: absolute;
     top: 36px;
     right: 0;
-    background: #202123;
-    border: 1px solid #4d4d4f;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
     padding: 8px;
     border-radius: 8px;
     min-width: 200px;
@@ -197,7 +197,7 @@ body.theme-cosmic {
 .bulk-settings-section {
     padding: 6px 8px;
     font-size: 13px;
-    color: #ececf1;
+    color: var(--text-primary);
 }
 
 .bulk-settings-panel label {
@@ -209,7 +209,7 @@ body.theme-cosmic {
 .bulk-settings-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.45);
+    background: var(--settings-overlay);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -220,8 +220,8 @@ body.theme-cosmic {
     position: relative;
     top: auto;
     right: auto;
-    background: #202123;
-    border: 1px solid #4d4d4f;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
     padding: 16px;
     border-radius: 12px;
     min-width: 320px;
@@ -245,12 +245,12 @@ body.theme-cosmic {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #f1f1f4;
+    color: var(--text-primary);
 }
 
 .bulk-settings-section p,
 .bulk-settings-section div {
-    color: #d6d6db;
+    color: var(--text-secondary);
 }
 
 .bulk-settings-panel-inner {
@@ -263,7 +263,7 @@ body.theme-cosmic {
     right: 8px;
     background: transparent;
     border: none;
-    color: #ececf1;
+    color: var(--text-primary);
     font-size: 18px;
     cursor: pointer;
 }
@@ -282,7 +282,7 @@ body.theme-cosmic {
 
 .bulk-subscribe-text {
     font-size: 13px;
-    color: #dcdce1;
+    color: var(--text-secondary);
 }
 
 /* Contact inputs */
@@ -290,9 +290,9 @@ body.theme-cosmic {
     width: 100%;
     margin-top: 6px;
     padding: 8px 10px;
-    background: #121214;
-    border: 1px solid #37373a;
-    color: #ececf1;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-secondary);
+    color: var(--text-primary);
     border-radius: 6px;
     font-size: 13px;
 }
@@ -301,9 +301,9 @@ body.theme-cosmic {
     width: 100%;
     margin-top: 6px;
     padding: 8px 10px;
-    background: #121214;
-    border: 1px solid #37373a;
-    color: #ececf1;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-secondary);
+    color: var(--text-primary);
     border-radius: 6px;
     font-size: 13px;
     resize: vertical;
@@ -316,7 +316,7 @@ body.theme-cosmic {
 /* Support & Contact styles */
 .bulk-support-email {
     font-size: 13px;
-    color: #dcdce1;
+    color: var(--text-secondary);
     background: transparent;
     padding: 8px 0;
 }
@@ -343,16 +343,16 @@ body.theme-cosmic {
 .bulk-upgrade-btn:hover { filter: brightness(1.03); }
 
 .bulk-admin-section {
-    border-top: 1px solid #37373a;
+    border-top: 1px solid var(--border-secondary);
     margin-top: 6px;
     padding-top: 12px;
 }
 
 .bulk-admin-result {
     font-size: 12px;
-    color: #d6d6db;
-    background: #16171c;
-    border: 1px solid #2c2d34;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-secondary);
     border-radius: 6px;
     padding: 8px 10px;
     min-height: 18px;
@@ -364,7 +364,7 @@ body.theme-cosmic {
     display: flex;
     gap: 8px;
     margin-bottom: 16px;
-    border-bottom: 1px solid #4d4d4f;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .bulk-tab-btn {
@@ -372,7 +372,7 @@ body.theme-cosmic {
     padding: 12px 10px;
     background: transparent;
     border: none;
-    color: #a0a0a0;
+    color: var(--text-tertiary);
     cursor: pointer;
     font-size: 13px;
     font-weight: 600;
@@ -381,12 +381,12 @@ body.theme-cosmic {
 }
 
 .bulk-tab-btn.active {
-    color: #10a37f;
-    border-bottom-color: #10a37f;
+    color: var(--accent-primary);
+    border-bottom-color: var(--accent-primary);
 }
 
 .bulk-tab-btn:hover {
-    color: #dcdce1;
+    color: var(--text-secondary);
 }
 
 .bulk-tab-content {
@@ -405,7 +405,7 @@ body.theme-cosmic {
     gap: 8px;
     cursor: pointer;
     font-size: 12px;
-    color: #ececf1;
+    color: var(--text-primary);
     font-weight: 600;
     user-select: none;
 }
@@ -434,7 +434,7 @@ body.theme-cosmic {
     height: 20px;
     top: 50%;
     transform: translateY(-50%);
-    background: #4d4d4f;
+    background: var(--border-color);
     border-radius: 999px;
     transition: background 0.18s ease;
 }
@@ -470,7 +470,7 @@ body.theme-cosmic {
 */
 
 .bulk-switch.bulk-switch-checked::before {
-    background: #10a37f;
+    background: var(--accent-primary);
 }
 
 .bulk-switch.bulk-switch-checked::after {
@@ -507,17 +507,17 @@ body.theme-cosmic {
 .bulk-btn {
     padding: 6px 10px;
     border-radius: 4px;
-    border: 1px solid #565869;
+    border: 1px solid var(--border-color);
     background: transparent;
-    color: white;
+    color: var(--text-primary);
     cursor: pointer;
     font-size: 12px;
     transition: all 0.2s;
 }
 
 .bulk-btn:hover:not(:disabled) {
-    background: #2a2b32;
-    border-color: #acacbe;
+    background: var(--bg-tertiary);
+    border-color: var(--text-primary);
 }
 
 .bulk-btn:disabled {
@@ -526,14 +526,14 @@ body.theme-cosmic {
 }
 
 .bulk-btn-delete:hover:not(:disabled) {
-    background: #d93025;
-    border-color: #d93025;
+    background: var(--accent-delete);
+    border-color: var(--accent-delete);
 }
 
 .bulk-btn-archive:hover:not(:disabled) {
-    background: #f0b232;
-    border-color: #f0b232;
-    color: black;
+    background: var(--accent-secondary);
+    border-color: var(--accent-secondary);
+    color: #0a0a0a;
 }
 
 .bulk-checkbox-container {
@@ -547,13 +547,13 @@ body.theme-cosmic {
     width: 18px;
     height: 18px;
     cursor: pointer;
-    accent-color: #10a37f;
+    accent-color: var(--accent-primary);
 }
 
 #bulk-progress-bar {
     width: 100%;
     height: 6px;
-    background: #4d4d4f;
+    background: var(--border-color);
     margin-top: 4px;
     border-radius: 3px;
     overflow: hidden;
@@ -561,7 +561,7 @@ body.theme-cosmic {
 
 #bulk-progress-fill {
     height: 100%;
-    background: #10a37f;
+    background: var(--accent-primary);
     width: 0%;
     transition: width 0.3s ease;
 }
@@ -571,7 +571,7 @@ body.theme-cosmic {
     position: fixed;
     top: 0; left: 0;
     width: 100vw; height: 100vh;
-    background: rgba(0,0,0,0.7);
+    background: var(--modal-overlay);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -580,14 +580,14 @@ body.theme-cosmic {
 }
 
 .bulk-modal-content {
-    background: #202123;
+    background: var(--bg-primary);
     padding: 24px;
     border-radius: 12px;
-    color: white;
+    color: var(--text-primary);
     text-align: center;
     min-width: 320px;
     max-width: 400px;
-    border: 1px solid #4d4d4f;
+    border: 1px solid var(--border-color);
     box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
@@ -601,29 +601,30 @@ body.theme-cosmic {
 .bulk-modal-btn {
     padding: 8px 20px;
     border-radius: 6px;
-    border: 1px solid #565869;
+    border: 1px solid var(--border-color);
     cursor: pointer;
     font-weight: 600;
     transition: all 0.2s;
+    color: var(--text-primary);
 }
 
 .bulk-modal-btn-yes {
-    background: #10a37f;
-    color: white;
-    border-color: #10a37f;
+    background: var(--accent-primary);
+    color: #0a0a0a;
+    border-color: var(--accent-primary);
 }
 
 .bulk-modal-btn-yes:hover {
-    background: #1a7f64;
+    filter: brightness(0.9);
 }
 
 .bulk-modal-btn-no {
     background: transparent;
-    color: #ececf1;
+    color: var(--text-primary);
 }
 
 .bulk-modal-btn-no:hover {
-    background: #2a2b32;
+    background: var(--bg-tertiary);
 }
 
 /* Toast Notification Styles */
@@ -631,12 +632,12 @@ body.theme-cosmic {
     position: fixed;
     bottom: 24px;
     right: 24px;
-    background: #202123;
-    color: white;
+    background: var(--bg-primary);
+    color: var(--text-primary);
     padding: 12px 20px;
     border-radius: 8px;
     z-index: 999999;
-    border: 1px solid #4d4d4f;
+    border: 1px solid var(--border-color);
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     font-size: 14px;
     animation: bulk-slide-in 0.3s ease-out;
