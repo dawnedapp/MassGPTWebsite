@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="MassGPT is a productivity tool for organized workflows, clean branding, and subscription-ready access." />
+    <title>MassGPT | Productivity tools with subscription-ready access</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="MassGPTWebsite.css" />
+</head>
+
+<body>
+    <div class="page-shell">
+        <header class="topbar">
+            <div class="brand-lockup">
+                <div class="brand-mark" aria-hidden="true">
+                    <span>M</span>
+                </div>
+                <div>
+                    <p class="eyebrow">MassGPT</p>
+                    <p class="brand-tag">MassGPT helps people stay organized with a subscription-based productivity
+                        experience</p>
+                </div>
+            </div>
+            <div class="topbar-actions">
+                <label class="theme-switcher" for="theme-select">
+                    <span>Theme</span>
+                    <select id="theme-select" aria-label="Theme selector">
+                        <option value="default">Default</option>
+                        <option value="dark">Dark</option>
+                        <option value="green">Green</option>
+                        <option value="luduvo">Luduvo</option>
+                        <option value="cloud">Cloud</option>
+                        <option value="cosmic">Cosmic</option>
+                    </select>
+                </label>
+                <a class="pill-link" href="#contact">Learn more</a>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-copy">
+                    <p class="section-label">Built for structured workflows</p>
+                    <h1>MassGPT keeps high-volume work organized, clear, and easy to manage.</h1>
+                    <p class="lede">
+                        MassGPT is a productivity tool for users who need a cleaner way to manage repetitive
+                        work, stay focused, and access the product through a subscription model.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#features">See product features</a>
+                        <a class="button button-secondary" href="#workflow">How MassGPT works</a>
+                    </div>
+                </div>
+
+                <aside class="hero-card" aria-label="Project summary">
+                    <div class="glass-card glass-card-large">
+                        <p class="card-kicker">Product status</p>
+                        <h2>Ready for Stripe review and public launch</h2>
+                        <ul class="status-list">
+                            <li>Explains what MassGPT does</li>
+                            <li>Supports subscription-based access</li>
+                            <li>Works as a clean static site</li>
+                        </ul>
+                    </div>
+                </aside>
+            </section>
+
+            <section class="feature-grid" id="features">
+                <article class="feature-card feature-card-accent">
+                    <p class="card-kicker">Workspace</p>
+                    <h3>Organized productivity flow</h3>
+                    <p>
+                        MassGPT is built to help users keep repetitive work, access, and next steps in one
+                        clear flow instead of scattering them across separate tools.
+                    </p>
+                </article>
+                <article class="feature-card">
+                    <p class="card-kicker">Subscription</p>
+                    <h3>Paid access with a clear path</h3>
+                    <p>
+                        The product page explains that MassGPT uses subscription-based access, so users know
+                        how the product is delivered and supported.
+                    </p>
+                </article>
+            </section>
+
+            <section class="workflow" id="workflow">
+                <div class="workflow-copy">
+                    <p class="section-label">Workflow</p>
+                    <h2>How people move through MassGPT.</h2>
+                    <p>
+                        MassGPT is designed to be easy to understand from the first visit: what the product
+                        does, how access works, and where a user goes next.
+                    </p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span>01</span>
+                        <div>
+                            <h3>Discover the product</h3>
+                            <p>Visitors land on a clear MassGPT page that explains the brand, the purpose, and the kind
+                                of productivity work it supports.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <span>02</span>
+                        <div>
+                            <h3>Understand access</h3>
+                            <p>The page makes it easy to see that MassGPT uses a subscription model, with support and
+                                review-ready contact details available right away.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <span>03</span>
+                        <div>
+                            <h3>Move into action</h3>
+                            <p>Once users understand the product, they can contact support, request access, or continue
+                                into the app experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta-band" id="contact">
+                <div>
+                    <p class="section-label">Contact</p>
+                    <h2>Ready to review MassGPT?</h2>
+                    <p>
+                        This page is meant to help Stripe and visitors understand MassGPT as a real product
+                        with a clear purpose, subscription flow, and support path.
+                    </p>
+                </div>
+                <a class="button button-primary"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=AamirKPathan2009@outlook.com" target="_blank"
+                    rel="noopener noreferrer">Contact support</a>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>MassGPT Website</p>
+            <p>Static product page for MassGPT and Stripe review.</p>
+        </footer>
+    </div>
+
+    <script>
+        (() => {
+            const themeSelect = document.getElementById("theme-select");
+            const storageKey = "massgpt-theme";
+            const body = document.body;
+            const validThemes = new Set(["default", "dark", "green", "luduvo", "cloud", "cosmic"]);
+
+            const applyTheme = (theme) => {
+                body.className = theme === "default" ? "" : theme;
+                themeSelect.value = theme;
+            };
+
+            const savedTheme = localStorage.getItem(storageKey);
+            applyTheme(validThemes.has(savedTheme) ? savedTheme : "default");
+
+            themeSelect.addEventListener("change", (event) => {
+                const nextTheme = validThemes.has(event.target.value) ? event.target.value : "default";
+                applyTheme(nextTheme);
+                localStorage.setItem(storageKey, nextTheme);
+            });
+        })();
+    </script>
+</body>
+
+</html>
