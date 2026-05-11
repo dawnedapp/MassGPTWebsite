@@ -1,7 +1,127 @@
+/* Theme System - CSS Custom Properties */
+:root {
+    /* Default Dark Theme */
+    --bg-primary: #202123;
+    --bg-secondary: #121214;
+    --bg-tertiary: #2a2b32;
+    --border-color: #4d4d4f;
+    --border-secondary: #37373a;
+    --text-primary: #ececf1;
+    --text-secondary: #d6d6db;
+    --text-tertiary: #a0a0a0;
+    --accent-primary: #10a37f;
+    --accent-secondary: #f0b232;
+    --accent-delete: #d93025;
+    --modal-overlay: rgba(0,0,0,0.7);
+    --settings-overlay: rgba(0,0,0,0.45);
+}
+
+/* Light/Default Theme */
+body.theme-default {
+    --bg-primary: #f6f4ef;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #e8e8e8;
+    --border-color: #d1ccc4;
+    --border-secondary: #c9c4bb;
+    --text-primary: #0a0a0a;
+    --text-secondary: #2a2a2a;
+    --text-tertiary: #4a4a4a;
+    --accent-primary: #8a7f78;
+    --accent-secondary: #f0b232;
+    --accent-delete: #d93025;
+    --modal-overlay: rgba(0,0,0,0.5);
+    --settings-overlay: rgba(0,0,0,0.35);
+}
+
+/* Dark Theme (Default) */
+body.theme-dark {
+    --bg-primary: #1a1210;
+    --bg-secondary: #0f0e0c;
+    --bg-tertiary: #2a2b32;
+    --border-color: #4d3a33;
+    --border-secondary: #37373a;
+    --text-primary: #ffd57b;
+    --text-secondary: #d6d6db;
+    --text-tertiary: #a0a0a0;
+    --accent-primary: #ffd57b;
+    --accent-secondary: #f0b232;
+    --accent-delete: #d93025;
+    --modal-overlay: rgba(0,0,0,0.7);
+    --settings-overlay: rgba(0,0,0,0.45);
+}
+
+/* Green Theme */
+body.theme-green {
+    --bg-primary: #0a1208;
+    --bg-secondary: #050a04;
+    --bg-tertiary: #1a2118;
+    --border-color: #2d4a28;
+    --border-secondary: #1f3a1a;
+    --text-primary: #44e899;
+    --text-secondary: #d6d6db;
+    --text-tertiary: #a0a0a0;
+    --accent-primary: #44e899;
+    --accent-secondary: #f0b232;
+    --accent-delete: #d93025;
+    --modal-overlay: rgba(0,0,0,0.7);
+    --settings-overlay: rgba(0,0,0,0.45);
+}
+
+/* Luduvo Theme (Purple-Pink) */
+body.theme-luduvo {
+    --bg-primary: #120f18;
+    --bg-secondary: #0a0708;
+    --bg-tertiary: #2a2734;
+    --border-color: #4d3a47;
+    --border-secondary: #37323f;
+    --text-primary: #ff2a4f;
+    --text-secondary: #d6d6db;
+    --text-tertiary: #a0a0a0;
+    --accent-primary: #ff2a4f;
+    --accent-secondary: #f0b232;
+    --accent-delete: #d93025;
+    --modal-overlay: rgba(0,0,0,0.7);
+    --settings-overlay: rgba(0,0,0,0.45);
+}
+
+/* Cloud Theme (Light Blue) */
+body.theme-cloud {
+    --bg-primary: #e8eff6;
+    --bg-secondary: #f5f9fc;
+    --bg-tertiary: #d9e5f0;
+    --border-color: #b5d0e8;
+    --border-secondary: #a0bfd6;
+    --text-primary: #1a3a5c;
+    --text-secondary: #2a4a6c;
+    --text-tertiary: #4a6a8c;
+    --accent-primary: #4a7fa5;
+    --accent-secondary: #f0b232;
+    --accent-delete: #d93025;
+    --modal-overlay: rgba(0,0,0,0.5);
+    --settings-overlay: rgba(0,0,0,0.35);
+}
+
+/* Cosmic Theme (Deep Purple) */
+body.theme-cosmic {
+    --bg-primary: #0b0d1a;
+    --bg-secondary: #050609;
+    --bg-tertiary: #1a1f33;
+    --border-color: #3a3d5a;
+    --border-secondary: #2a2d47;
+    --text-primary: #7e5cff;
+    --text-secondary: #d6d6db;
+    --text-tertiary: #a0a0a0;
+    --accent-primary: #7e5cff;
+    --accent-secondary: #f0b232;
+    --accent-delete: #d93025;
+    --modal-overlay: rgba(0,0,0,0.7);
+    --settings-overlay: rgba(0,0,0,0.45);
+}
+
 #bulk-manager-toolbar {
     padding: 12px;
-    background: #202123;
-    border-bottom: 1px solid #4d4d4f;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
     margin-bottom: 10px;
     position: sticky;
     top: 0;
