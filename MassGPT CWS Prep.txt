@@ -70,3 +70,28 @@ implement the Stripe customer.subscription.updated webhook and cancel_scheduled_
 start implementing the Light/Dark CSS themes and a theme switcher, or
 prepare Cloudflare Workers deployment guide and wrangler.toml, or
 integrate SendGrid/SES for production email verification sending.
+
+12. Stripe webhook destination plan (now vs later)
+
+Now (before MongoDB/Cloudflare is finalized):
+- Create the Stripe event destination now so setup is not blocked.
+- Use a temporary HTTPS endpoint URL (for example a short-lived tunnel URL) if production API is not ready yet.
+- Select key subscription/payment events:
+	- checkout.session.completed
+	- customer.subscription.updated
+	- customer.subscription.deleted
+	- invoice.payment_succeeded
+	- invoice.payment_failed
+- Save destination and reveal/copy signing secret (whsec_...).
+- Put signing secret in backend env as STRIPE_WEBHOOK_SECRET and restart backend.
+
+After friend finishes MongoDB + Cloudflare:
+- Replace destination Endpoint URL with real production webhook URL (example: https://api.yourdomain.com/webhook).
+- Re-check signing secret shown for that destination and confirm STRIPE_WEBHOOK_SECRET matches exactly.
+- Send Stripe test event(s) and confirm backend returns HTTP 200.
+- Run end-to-end test: checkout/subscription lifecycle updates user access in DB.
+
+Operational notes:
+- Dashboard sessions can time out, but saved destination config does not disappear.
+- If destination is recreated (instead of edited), verify signing secret again.
+- Keep Stripe in test mode until full end-to-end verification is complete.
