@@ -596,7 +596,7 @@ def create_checkout_session():
         return jsonify({'error': 'Internal server error'}), 500
 
 # Webhook handler for Stripe events
-@app.route('/api/webhook', methods=['POST'])
+@app.route('/webhook', methods=['POST'])
 def webhook():
     """Handle Stripe webhook events."""
     payload = request.get_data()
