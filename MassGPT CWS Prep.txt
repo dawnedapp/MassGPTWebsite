@@ -24,7 +24,7 @@ Retry & logging: Add retries and logs for Stripe API failures; surface friendly 
 Terms click-through: Enforce terms. (ui.js, app.py) 
 Email verification: Users receive 6-digit code on registration; must verify before login. 
 Integrate SendGrid for production email delivery: Add SENDGRID_API_KEY to env; update send_verification_code() to use SendGrid API.
-Uninstall flow: Verify chrome.runtime.setUninstallURL in background.js and that feedback page opt-in cancel works. ✅
+Uninstall flow: Verify chrome.runtime.setUninstallURL in background.js and that feedback page opt-in cancel works. 
 Privacy Policy: Publish a privacy page and link it in store listing and app: explain data types, retention, deletion steps, third parties (Stripe, Mongo).
 Terms & subscription disclosure: Ensure Terms explicitly state uninstall ≠ cancel and explain cancel options.
 5. Theming & localization
