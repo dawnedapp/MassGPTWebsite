@@ -1,5 +1,14 @@
-(function() {
+    (function() {
     console.log("[Bulk Manager] Content script loaded");
+
+    // Load and apply saved theme on startup
+    try {
+        chrome.storage.local.get(['bulkTheme'], (res) => {
+            const savedTheme = res.bulkTheme || 'theme-dark';
+            document.documentElement.setAttribute('data-bulk-manager-theme', savedTheme);
+            document.body.classList.add(savedTheme);
+        });
+    } catch (e) {}
 
     const ROOT_ID = 'bulk-manager-root';
 

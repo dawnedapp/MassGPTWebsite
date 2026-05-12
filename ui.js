@@ -347,6 +347,18 @@ function createToolbar() {
                 </div>
 
                 <div class="bulk-settings-section">
+                    <h4 style="margin:8px 0 6px 0;">Theme</h4>
+                    <select id="bulk-theme-select" style="width:100%; padding:8px 10px; background:var(--bg-secondary); border:1px solid var(--border-secondary); color:var(--text-primary); border-radius:6px; font-size:13px; cursor:pointer;">
+                        <option value="theme-dark">Dark (Default)</option>
+                        <option value="theme-default">Light</option>
+                        <option value="theme-green">Green</option>
+                        <option value="theme-luduvo">Luduvo</option>
+                        <option value="theme-cloud">Cloud</option>
+                        <option value="theme-cosmic">Cosmic</option>
+                    </select>
+                </div>
+
+                <div class="bulk-settings-section">
                     <h4 style="margin:8px 0 6px 0;">Support & Contact</h4>
                     <div class="bulk-support-email">mohammedyusufnakhuda@gmail.com</div>
                     <div style="margin-top:8px;">
@@ -461,13 +473,28 @@ function createToolbar() {
 
     // Basic settings behaviors
     try {
-        chrome.storage.local.get(['bulkConfirmDelete', 'bulkConfirmArchive'], (res) => {
+        chrome.storage.local.get(['bulkConfirmDelete', 'bulkConfirmArchive', 'bulkTheme'], (res) => {
             try {
                 const del = settingsOverlay.querySelector('#bulk-confirm-delete');
                 const arc = settingsOverlay.querySelector('#bulk-confirm-archive');
+                const themeSelect = settingsOverlay.querySelector('#bulk-theme-select');
                 if (del) del.checked = !!res.bulkConfirmDelete;
                 if (arc) arc.checked = !!res.bulkConfirmArchive;
+                if (themeSelect && res.bulkTheme) {
+                    themeSelect.value = res.bulkTheme;
+                }
             } catch (e) {}
+        });
+    } catch (e) {}
+
+    // Load and apply saved theme on page load
+    try {
+        chrome.storage.local.get(['bulkTheme'], (res) => {
+            const savedTheme = res.bulkTheme || 'theme-dark';
+            document.documentElement.setAttribute('data-bulk-manager-theme', savedTheme);
+            // Remove all theme classes and add the saved one
+            document.body.classList.remove('theme-dark', 'theme-default', 'theme-green', 'theme-luduvo', 'theme-cloud', 'theme-cosmic');
+            document.body.classList.add(savedTheme);
         });
     } catch (e) {}
 
@@ -481,6 +508,22 @@ function createToolbar() {
                 try { chrome.storage.local.set(obj); } catch (e) {}
             });
         });
+    } catch (e) {}
+
+    // Theme selector
+    try {
+        const themeSelect = settingsOverlay.querySelector('#bulk-theme-select');
+        if (themeSelect) {
+            themeSelect.addEventListener('change', (e) => {
+                const selectedTheme = e.target.value;
+                // Save to storage
+                chrome.storage.local.set({ bulkTheme: selectedTheme });
+                // Apply theme immediately
+                document.body.classList.remove('theme-dark', 'theme-default', 'theme-green', 'theme-luduvo', 'theme-cloud', 'theme-cosmic');
+                document.body.classList.add(selectedTheme);
+                document.documentElement.setAttribute('data-bulk-manager-theme', selectedTheme);
+            });
+        }
     } catch (e) {}
 
     // Copy email button
