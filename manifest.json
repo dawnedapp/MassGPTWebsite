@@ -4,9 +4,9 @@
   "description": "Bulk delete and archive ChatGPT conversations with ease.",
   "version": "1.0.0",
   "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
+    "16": "icons/massgpt-logo.svg",
+    "48": "icons/massgpt-logo.svg",
+    "128": "icons/massgpt-logo.svg"
   },
   "permissions": ["storage"],
   "host_permissions": ["https://chatgpt.com/*", "https://chat.openai.com/*"],
@@ -23,9 +23,9 @@
   "action": {
     "default_title": "GPT Mass Deleter",
     "default_icon": {
-      "16": "icons/icon16.png",
-      "48": "icons/icon48.png",
-      "128": "icons/icon128.png"
+      "16": "icons/massgpt-logo.svg",
+      "48": "icons/massgpt-logo.svg",
+      "128": "icons/massgpt-logo.svg"
     }
   }
 }
