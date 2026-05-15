@@ -230,7 +230,7 @@ html, body {
 .brand-mark {
   width: 48px;
   height: 48px;
-  background: var(--primary);
+  background: transparent;
   color: var(--primary-foreground);
   display: flex;
   align-items: center;
@@ -238,6 +238,8 @@ html, body {
   font-size: 24px;
   font-weight: 800;
   border-radius: 8px;
+  padding: 4px;
+  overflow: hidden;
 }
 
 .brand-mark-img {
