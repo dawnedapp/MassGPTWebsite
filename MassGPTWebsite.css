@@ -149,6 +149,7 @@ body.green {
   --border: rgba(68, 232, 153, 0.15);
   --input: #1a3a15;
   --ring: #44e899;
+  --muted-foreground: #9fcfb3;
 }
 
 body.luduvo {
@@ -163,6 +164,7 @@ body.luduvo {
   --border: rgba(255, 42, 79, 0.15);
   --input: #3a2535;
   --ring: #ff2a4f;
+  --muted-foreground: #d8c6cf;
 }
 
 body.cloud {
@@ -191,6 +193,7 @@ body.cosmic {
   --border: rgba(126, 92, 255, 0.15);
   --input: #2a2250;
   --ring: #7e5cff;
+  --muted-foreground: #cfc6ea;
 }
 
 * {
