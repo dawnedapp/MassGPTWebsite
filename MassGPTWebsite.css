@@ -14,6 +14,7 @@
   --tertiary-foreground: #1c1c1c;
   --tertiary-background: #ffffff;
   --tertiary-border: #f4d9b8;
+  --tertiary-foreground: var(--card-foreground);
   --muted: #ece7df;
   --muted-foreground: #7a746d;
   --accent: #f7e4c8;
@@ -150,6 +151,9 @@ body.green {
   --input: #1a3a15;
   --ring: #44e899;
   --muted-foreground: #9fcfb3;
+  --tertiary-background: #0f1a0c;
+  --tertiary-border: rgba(68, 232, 153, 0.08);
+  --tertiary-foreground: #e8f5e0;
 }
 
 body.luduvo {
@@ -165,6 +169,9 @@ body.luduvo {
   --input: #3a2535;
   --ring: #ff2a4f;
   --muted-foreground: #d8c6cf;
+  --tertiary-background: #1a1422;
+  --tertiary-border: rgba(255, 42, 79, 0.08);
+  --tertiary-foreground: #f5e8f0;
 }
 
 body.cloud {
@@ -194,6 +201,9 @@ body.cosmic {
   --input: #2a2250;
   --ring: #7e5cff;
   --muted-foreground: #cfc6ea;
+  --tertiary-background: #151829;
+  --tertiary-border: rgba(126, 92, 255, 0.08);
+  --tertiary-foreground: #e8e0f5;
 }
 
 * {
@@ -449,6 +459,7 @@ section {
 .feature-card-accent {
   background: var(--tertiary-background);
   border-color: var(--tertiary-border);
+  color: var(--tertiary-foreground, var(--foreground));
 }
 
 .feature-card h3 {
