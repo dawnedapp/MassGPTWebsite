@@ -240,6 +240,16 @@ html, body {
   border-radius: 8px;
 }
 
+/* hero logo above product card */
+.hero-logo {
+  display: block;
+  margin: 0 auto 1rem auto;
+  width: 72px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
 .brand-lockup p {
   margin: 0;
   font-size: 14px;
