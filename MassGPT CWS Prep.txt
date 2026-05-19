@@ -1,6 +1,6 @@
 1. Immediate prep
 
-Themes: Define color palettes & font tokens and add to styles.css. 
+Themes: Define color palettes & font tokens and add to styles.css. ✅
 Branding: Finalize logo usage, app icon/favicon variants, and consistent brand colors across extension UI, store assets, and feedback/legal pages.⚠️
 Brand assets: Prepare/export 128x128 icon, square logo, and listing-ready screenshots with matching visual style.
 Stripe account: Create and verify the production Stripe account, set up business details, and configure payment/subscription settings.✅
