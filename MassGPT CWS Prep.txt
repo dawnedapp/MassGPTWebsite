@@ -4,7 +4,7 @@ Themes: Define color palettes & font tokens and add to styles.css.
 Branding: Finalize logo usage, app icon/favicon variants, and consistent brand colors across extension UI, store assets, and feedback/legal pages.
 Brand assets: Prepare/export 128x128 icon, square logo, and listing-ready screenshots with matching visual style.
 Stripe account: Create and verify the production Stripe account, set up business details, and configure payment/subscription settings.✅
-Keys / Secrets: Create/capture production secrets: MONGO_URI✅, STRIPE_SECRET_KEY✅, STRIPE_WEBHOOK_SECRET, JWT_SECRET_KEY✅, SECRET_KEY✅. Store securely (Render secrets or vault). ⚠️
+Keys / Secrets: Create/capture production secrets: MONGO_URI✅, STRIPE_SECRET_KEY✅, STRIPE_WEBHOOK_SECRET, JWT_SECRET_KEY✅, SECRET_KEY✅. Store securely (Render secrets or vault). 
 Stripe test: Create a Stripe test environment and test users; verify subscription create/update/delete flows with Stripe CLI.
 2. Code & manifest readiness
 
